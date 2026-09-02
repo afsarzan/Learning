@@ -27,7 +27,9 @@
 * `@Qualifier`: Added at the injection point (e.g., the constructor) to specify exactly which bean name you want to use when there are multiple candidates.
 
 * ApplicationContext is an Inversion of Control (IoC) container in Spring.
+* ConfigurableApplicationContext will give us option to close context. Its an interface
 * Bean scopes defines life cycle of beans, there are different kinds of it like Singleton, Prototype, Request, Session scope
-* PostConstruct -> runs after contructor call
-* 
+* `PostConstruct` -> runs after contructor call
+*  PreDestroy - runs before you close the context
+*  `hashCode()` - to allow objects to be stored and retrieved quickly in hash-based collections like HashMap and HashSet.
 

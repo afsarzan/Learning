@@ -31,5 +31,24 @@
 * Bean scopes defines life cycle of beans, there are different kinds of it like Singleton, Prototype, Request, Session scope
 * `PostConstruct` -> runs after contructor call
 *  PreDestroy - runs before you close the context
-*  `hashCode()` - to allow objects to be stored and retrieved quickly in hash-based collections like HashMap and HashSet.
+*  **Record** 
+   *  `hashCode()` - to allow objects to be stored and retrieved quickly in hash-based collections like HashMap and HashSet.
+   *  The strict limitation is that you cannot declare any instance variables (non-static fields) inside the body of a record.
+*  The canonical constructor is simply the "main" constructor that takes every field defined in the record header. It is generated automatically, but you can override it (ideally using the compact syntax) if you need to validate or adjust the incoming data before the record is created.
+
+`
+public record EmployeeRecord(String name, int employeeNumber) {
+    // Compact canonical constructor
+    public EmployeeRecord {
+        if (employeeNumber <= 0) {
+            throw new IllegalArgumentException("Employee number must be positive");
+        }
+        // If the name is null, default it to "Unknown"
+        if (name == null) {
+            name = "Unknown"; 
+        }
+        // Java automatically assigns this.name = name and this.employeeNumber = employeeNumber at the end
+    }
+}
+`
 

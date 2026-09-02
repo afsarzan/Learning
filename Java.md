@@ -25,3 +25,9 @@
 * `@Component`: A stereotype annotation that tells Spring to manage the creation of this object as a bean.
 * `@Primary`: Added to one of the implementation classes to mark it as the default choice when multiple implementations of an interface exist.
 * `@Qualifier`: Added at the injection point (e.g., the constructor) to specify exactly which bean name you want to use when there are multiple candidates.
+
+* ApplicationContext is an Inversion of Control (IoC) container in Spring.
+* Bean scopes defines life cycle of beans, there are different kinds of it like Singleton, Prototype, Request, Session scope
+* PostConstruct -> runs after contructor call
+* 
+

@@ -53,5 +53,5 @@ public record EmployeeRecord(String name, int employeeNumber) {
 `
 * JPA: Jakarta Persistance API is an interface implemented by hybernate, openJPA
 *  Spring Data JPA ( Repositories) <- JPA/Hibernate(Object oriendted persistence) <- JDBC(low-level access) <- Database
-*  
+*  Flyway is db migration tool 
 

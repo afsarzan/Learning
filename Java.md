@@ -56,6 +56,7 @@ public record EmployeeRecord(String name, int employeeNumber) {
 *  Flyway is db migration tool
 *  @Table(name="tableName") mapping to table in db in Entity
 *  Enable Annotation Processors to enable lombok in IntelliJ
-*  
+*  Java records are an excellent native feature for handling simple, immutable data carriers, they are not a complete replacement for Project Lombok. You still need Lombok because records are strictly immutable, final, and cannot participate in class inheritance, making them incompatible with many enterprise framework patterns like JPA/Hibernate
+*   Lombok’s @Builder annotation instantly creates a clean, readable builder API
 
 

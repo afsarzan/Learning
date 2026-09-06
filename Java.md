@@ -58,6 +58,10 @@ public record EmployeeRecord(String name, int employeeNumber) {
 *  Enable Annotation Processors to enable lombok in IntelliJ
 *  Java records are an excellent native feature for handling simple, immutable data carriers, they are not a complete replacement for Project Lombok. You still need Lombok because records are strictly immutable, final, and cannot participate in class inheritance, making them incompatible with many enterprise framework patterns like JPA/Hibernate
 * Lombok’s @Builder annotation instantly creates a clean, readable builder API
-* the @JoinColumn annotation is used to configure how two entities are joined together in the database. 
+* the @JoinColumn annotation is used to configure how two entities are joined together in the database.
+* Edge Cases & Gotchas:
+   * The "God Factory" Anti-Pattern: A Factory Method often relies on a massive switch or if/else statement. Every time you add a new subclass, you have to modify the Factory, violating the Open/Closed Principle.
+   * Over-Engineering: Don't use a Factory if there is only one implementation of an interface and never will be another. Don't use a Builder for a simple object with 2 parameters—just use a standard constructor or Java Records.
+   * They Aren't Mutually Exclusive: In mature systems, they frequently work together. A Factory might internally use a Builder to construct the complex subclass before returning it as a generalized interface.
 
 

@@ -18,10 +18,12 @@ Based on the video **System Design & Architecture Course | Load Balancers, Cachi
 ## 4. Session Management
 * Horizontal scaling breaks default, in-memory session handling. If a user logs in on Server A, but their next click is routed to Server B, they will appear logged out.
 * *Solution:* Move session data into a central **Shared Store** so any server can verify any logged-in user.
+* A server that stores nothing about you is called stateless ( Redis )
 
 ## 5. Database Optimization (Replicas)
 * As traffic grows, multiple servers hitting a single database creates a new bottleneck.
 * *Solution:* Implement connection pooling and **Read Replicas** to split read traffic across multiple copies of the database, keeping the primary database dedicated to writes.
+<img width="1774" height="978" alt="Screenshot 2026-09-08 at 12 05 02 AM" src="https://github.com/user-attachments/assets/6df19ffe-83dd-412b-bb40-cd4c5c733c8a" />
 
 ## 6. Caching
 * For expensive or frequently requested answers that don't constantly change, compute them once and store the result in a **Cache**. This drastically reduces database load.

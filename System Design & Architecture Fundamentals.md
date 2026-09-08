@@ -1,3 +1,4 @@
+
 # System Design & Architecture: Main Points
 
 Based on the video **System Design & Architecture Course | Load Balancers, Caching, Queues, Sharding and more** by *JavaScript Mastery*.
@@ -27,6 +28,8 @@ Based on the video **System Design & Architecture Course | Load Balancers, Cachi
 
 ## 6. Caching
 * For expensive or frequently requested answers that don't constantly change, compute them once and store the result in a **Cache**. This drastically reduces database load.
+<img width="1774" height="978" alt="Screenshot 2026-09-08 at 12 35 53 AM" src="https://github.com/user-attachments/assets/18f90536-c5ee-43a9-8327-a1a998a8f9db" />
+<img width="1774" height="978" alt="Screenshot 2026-09-08 at 12 38 24 AM" src="https://github.com/user-attachments/assets/089bae51-c909-473c-a6ef-b36d6177dbff" />
 
 ## 7. Message Queues & Background Workers
 * Slow operations (like processing payments or sending emails) make users wait if executed synchronously.

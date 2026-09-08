@@ -34,12 +34,16 @@ Based on the video **System Design & Architecture Course | Load Balancers, Cachi
 ## 7. Message Queues & Background Workers
 * Slow operations (like processing payments or sending emails) make users wait if executed synchronously.
 * *Solution:* Push slow tasks to a **Queue**. Dedicated background workers will process these tasks asynchronously, allowing the main app to respond to the user immediately.
+* <img width="1774" height="978" alt="Screenshot 2026-09-08 at 12 42 20 AM" src="https://github.com/user-attachments/assets/14d79b87-194d-43dd-aed1-9185ccb94bde" />
+
+
 
 ## 8. Database Sharding
 * When a dataset becomes too massive to fit on any single machine, you use **Sharding** — splitting the data horizontally across multiple different databases based on a routing rule (e.g., by User ID).
 * *Trade-offs:* This is incredibly complex. "Cross-shard queries" (e.g., counting total users across all shards) become slow and difficult. Sharding is a last resort, used only when data won't fit any other way.
+<img width="1774" height="978" alt="Screenshot 2026-09-08 at 12 40 26 AM" src="https://github.com/user-attachments/assets/bca32ab8-9700-4cee-bdde-d319b3bb51ea" />
 
 ## Conclusion
 System design is about solving specific bottlenecks one step at a time. The true job of an engineer isn't just knowing these terms, but understanding *why* you need each piece, *when* to add it, and what *trade-offs* (costs, single points of failure, complexity) it introduces.
 
-https://www.youtube.com/watch?v=EaXHfuHRWwg
+Source: https://www.youtube.com/watch?v=EaXHfuHRWwg

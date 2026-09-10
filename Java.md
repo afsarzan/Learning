@@ -63,5 +63,9 @@ public record EmployeeRecord(String name, int employeeNumber) {
    * The "God Factory" Anti-Pattern: A Factory Method often relies on a massive switch or if/else statement. Every time you add a new subclass, you have to modify the Factory, violating the Open/Closed Principle.
    * Over-Engineering: Don't use a Factory if there is only one implementation of an interface and never will be another. Don't use a Builder for a simple object with 2 parameters—just use a standard constructor or Java Records.
    * They Aren't Mutually Exclusive: In mature systems, they frequently work together. A Factory might internally use a Builder to construct the complex subclass before returning it as a generalized interface.
+----
+
+* Spring Data JDBC bypasses JPA rules: If you are deeply committed to Domain-Driven Design (DDD) and want entirely immutable data models, look into Spring Data JDBC instead of Spring Data JPA. Spring Data JDBC does not use proxies, dirty checking, or lazy loading. It allows you to use record types directly as your database entities!
+* 
 
 

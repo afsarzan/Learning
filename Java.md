@@ -66,6 +66,6 @@ public record EmployeeRecord(String name, int employeeNumber) {
 ----
 
 * Spring Data JDBC bypasses JPA rules: If you are deeply committed to Domain-Driven Design (DDD) and want entirely immutable data models, look into Spring Data JDBC instead of Spring Data JPA. Spring Data JDBC does not use proxies, dirty checking, or lazy loading. It allows you to use record types directly as your database entities!
-* 
+* JPA - LazyInitializationException: Because JPA proxies objects and loads relationships on demand, if you try to access a lazy-loaded relationship outside of an active database transaction (like in your REST controller), it crashes.
 
 

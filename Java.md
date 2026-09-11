@@ -67,5 +67,7 @@ public record EmployeeRecord(String name, int employeeNumber) {
 
 * Spring Data JDBC bypasses JPA rules: If you are deeply committed to Domain-Driven Design (DDD) and want entirely immutable data models, look into Spring Data JDBC instead of Spring Data JPA. Spring Data JDBC does not use proxies, dirty checking, or lazy loading. It allows you to use record types directly as your database entities!
 * JPA - LazyInitializationException: Because JPA proxies objects and loads relationships on demand, if you try to access a lazy-loaded relationship outside of an active database transaction (like in your REST controller), it crashes.
+* The CQRS Pattern with JDBC: A common, highly scalable architecture is to use Spring Data JDBC for writes (Commands) to ensure strict consistency and fast inserts, but use plain JdbcTemplate or raw SQL to write highly optimized, read-only queries (Queries) that bypass the object mapper entirely.
+* Read-Only Transactions in JPA: If you are using JPA just to fetch data and return it to a user, always annotate the service method with @Transactional(readOnly = true). This turns off the "dirty checking" mechanism, saving significant CPU and memory overhead.
 
 

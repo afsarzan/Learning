@@ -70,5 +70,6 @@ public record EmployeeRecord(String name, int employeeNumber) {
 * The CQRS Pattern with JDBC: A common, highly scalable architecture is to use Spring Data JDBC for writes (Commands) to ensure strict consistency and fast inserts, but use plain JdbcTemplate or raw SQL to write highly optimized, read-only queries (Queries) that bypass the object mapper entirely.
 * Read-Only Transactions in JPA: If you are using JPA just to fetch data and return it to a user, always annotate the service method with @Transactional(readOnly = true). This turns off the "dirty checking" mechanism, saving significant CPU and memory overhead.
 * The @BatchSize Safety Net: Add @BatchSize(size = 50) to your entity collections or application properties (spring.jpa.properties.hibernate.default_batch_fetch_size=50). If you accidentally trigger lazy loading in a loop, Hibernate will fetch the related entities in chunks of 50 using a SQL IN (id1, id2...id50) clause. It turns an $N+1$ problem into an $N/50 + 1$ problem—saving your app from crashing while you fix the underlying issue.
-
+* Eager Loading minimizes network trips. It is highly efficient when you know you need the related data (e.g., rendering a full profile page that displays a User and all their Roles).
+* Lazy Loading minimizes memory usage. It is highly efficient when you only need the parent entity and would waste gigabytes of RAM hydrating relationships you never look at (e.g., fetching a User just to update their password; you don't need to load their 5,000 historical Login Audit records into memory).
 

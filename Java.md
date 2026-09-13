@@ -76,4 +76,5 @@ public record EmployeeRecord(String name, int employeeNumber) {
 * Jackson Serialization Filtering: If you pass a lazily loaded proxy to a frontend framework via a REST endpoint, the JSON serializer (Jackson) will call .get() on every property, triggering N+1 queries or exceptions. Use @JsonIgnore on bidirectional relationships, or better yet, map your Entities to immutable DTOs (Records) before returning them from the service layer.
 * Spring Data JPA Projections: If you only need to read data and send it out (no business logic in between), skip MapStruct entirely. You can tell Spring Data to map SQL results directly into a Java record!
 List<UserResponse> findByEmail(String email); — Spring will automatically select only the id, email, and roleName columns and construct the record for you.
+* 
 

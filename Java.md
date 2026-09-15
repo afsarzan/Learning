@@ -79,5 +79,6 @@ List<UserResponse> findByEmail(String email); — Spring will automatically sele
 * JPA Buddy , a plugin in Intelligj for generating entities
 * Set<String> hashset = new HashSet<>(); Building an LRU Cache: Under the hood, LinkedHashSet is backed by a LinkedHashMap. While you can't do it directly with the Set, you can use LinkedHashMap and override the removeEldestEntry() method to instantly build a highly efficient Least Recently Used (LRU) cache with exactly 3 lines of logic.
 * List<String> uniqueList = new ArrayList<>(new LinkedHashSet<>(listWithDuplicates)); -> The One-Liner Deduplication: The absolute cleanest way to remove duplicates from an ArrayList in Java while keeping the elements in their original order:
+* 
 
 

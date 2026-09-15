@@ -76,5 +76,8 @@ public record EmployeeRecord(String name, int employeeNumber) {
 * Jackson Serialization Filtering: If you pass a lazily loaded proxy to a frontend framework via a REST endpoint, the JSON serializer (Jackson) will call .get() on every property, triggering N+1 queries or exceptions. Use @JsonIgnore on bidirectional relationships, or better yet, map your Entities to immutable DTOs (Records) before returning them from the service layer.
 * Spring Data JPA Projections: If you only need to read data and send it out (no business logic in between), skip MapStruct entirely. You can tell Spring Data to map SQL results directly into a Java record!
 List<UserResponse> findByEmail(String email); — Spring will automatically select only the id, email, and roleName columns and construct the record for you.
-* 
+* JPA Buddy , a plugin in Intelligj for generating entities
+* Set<String> hashset = new HashSet<>(); Building an LRU Cache: Under the hood, LinkedHashSet is backed by a LinkedHashMap. While you can't do it directly with the Set, you can use LinkedHashMap and override the removeEldestEntry() method to instantly build a highly efficient Least Recently Used (LRU) cache with exactly 3 lines of logic.
+* List<String> uniqueList = new ArrayList<>(new LinkedHashSet<>(listWithDuplicates)); -> The One-Liner Deduplication: The absolute cleanest way to remove duplicates from an ArrayList in Java while keeping the elements in their original order:
+
 

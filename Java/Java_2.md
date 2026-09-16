@@ -3,3 +3,6 @@
 * Keep it blazingly fast: Hash-based collections call hashCode() constantly. Avoid expensive operations inside hashCode() like string concatenation, complex math, or accessing a database. It should be a simple mathematical combination of primitive values.
 * A Marker Interface (sometimes called a markup interface) is a design pattern in Java where an interface has exactly zero methods or fields. It is entirely empty.
 * @RequiredArgsConstructor // <--- This generates the constructor invisibly!
+* If you are building a modern Spring Boot 3 app, default to ListCrudRepository. Only upgrade to JpaRepository if you specifically need JPA-specific features like batch flushing (saveAndFlush) or advanced Query by Example techniques. Keeping your repository interfaces as lightweight as possible is a best practice.
+* If you need sorting on top of your lists, there is a sibling interface called ListPagingAndSortingRepository which returns List types for its sorting methods instead of the older Iterable types.
+* 

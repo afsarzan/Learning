@@ -5,4 +5,5 @@
 * @RequiredArgsConstructor // <--- This generates the constructor invisibly!
 * If you are building a modern Spring Boot 3 app, default to ListCrudRepository. Only upgrade to JpaRepository if you specifically need JPA-specific features like batch flushing (saveAndFlush) or advanced Query by Example techniques. Keeping your repository interfaces as lightweight as possible is a best practice.
 * If you need sorting on top of your lists, there is a sibling interface called ListPagingAndSortingRepository which returns List types for its sorting methods instead of the older Iterable types.
+* Custom Base Repositories: If you want the safety of CrudRepository but need just one method from JpaRepository (like batch inserts), you don't have to compromise. You can create your own custom base interface and selectively expose only the methods you want from the Spring Data SimpleJpaRepository implementation using the @NoRepositoryBean annotation.
 * 

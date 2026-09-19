@@ -7,4 +7,4 @@
 * If you need sorting on top of your lists, there is a sibling interface called ListPagingAndSortingRepository which returns List types for its sorting methods instead of the older Iterable types.
 * Custom Base Repositories: If you want the safety of CrudRepository but need just one method from JpaRepository (like batch inserts), you don't have to compromise. You can create your own custom base interface and selectively expose only the methods you want from the Spring Data SimpleJpaRepository implementation using the @NoRepositoryBean annotation.
 * Mapping to DTOs directly: Don't use the EntityManager to fetch heavy Entities if you only need a report. Use the Criteria API's cb.construct(UserReportDto.class, user.get("id"), user.get("name")) to instruct Hibernate to map the raw SQL result set directly into an immutable Java Record, saving massive amounts of RAM.
-* 
+* Spring Data Specifications are a wrapper around the standard JPA Criteria API that allows you to write dynamic database queries by breaking down the SQL WHERE clause into small, reusable Java objects.

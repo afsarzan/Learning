@@ -9,4 +9,5 @@
 * Mapping to DTOs directly: Don't use the EntityManager to fetch heavy Entities if you only need a report. Use the Criteria API's cb.construct(UserReportDto.class, user.get("id"), user.get("name")) to instruct Hibernate to map the raw SQL result set directly into an immutable Java Record, saving massive amounts of RAM.
 * Spring Data Specifications are a wrapper around the standard JPA Criteria API that allows you to write dynamic database queries by breaking down the SQL WHERE clause into small, reusable Java objects.
 * The JPA Static Metamodel is a tool that automatically generates "shadow" classes for all your JPA @Entity classes at compile time. For every entity you create (e.g., User), the generator creates a companion class with an underscore suffix (e.g., User_). This companion class contains static variables representing every field inside your entity.
-* 
+* The Persistence Context is an in-memory staging area where an Object-Relational Mapper (ORM), like Hibernate, manages your application's data entities before synchronizing them with the underlying database. When you fetch a record from the database, the ORM doesn't just give you a raw Java or TypeScript object; it places that object into the persistence context and tracks it.
+

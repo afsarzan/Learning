@@ -12,3 +12,7 @@
 * The Persistence Context is an in-memory staging area where an Object-Relational Mapper (ORM), like Hibernate, manages your application's data entities before synchronizing them with the underlying database. When you fetch a record from the database, the ORM doesn't just give you a raw Java or TypeScript object; it places that object into the persistence context and tracks it.
 * When a virtual thread makes a blocking I/O call (like Thread.sleep(), a database call, or an HTTP request), the JVM detects the block. It unmounts the virtual thread from the underlying OS "carrier thread" and stores its stack state on the heap. The carrier thread is immediately freed up to execute another virtual thread. Once the I/O operation completes, the JVM seamlessly remounts the virtual thread onto an available carrier thread to resume execution.
 
+* Type Inference: Using the var keyword (Java 10+), you can write var name = "Java"; instead of String name = "Java";. Similarly, with the diamond operator (Java 7+), you can write List<String> items = new ArrayList<>(); without repeating the type on the right side.
+* Autoboxing: It is the automatic background conversion that the Java compiler performs between primitive types (like int, boolean, double) and their corresponding object wrapper classes (Integer, Boolean, Double).
+
+* 

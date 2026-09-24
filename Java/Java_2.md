@@ -14,5 +14,5 @@
 
 * Type Inference: Using the var keyword (Java 10+), you can write var name = "Java"; instead of String name = "Java";. Similarly, with the diamond operator (Java 7+), you can write List<String> items = new ArrayList<>(); without repeating the type on the right side.
 * Autoboxing: It is the automatic background conversion that the Java compiler performs between primitive types (like int, boolean, double) and their corresponding object wrapper classes (Integer, Boolean, Double).
-
-* 
+* Garbage Collection (GC) Pauses: This is the biggest performance killer. When a loop creates millions of short-lived wrapper objects, the heap fills up quickly. The JVM must pause your application to run the Garbage Collector to clean up these dead objects, causing severe latency spikes.
+* CPU Cycles: Arithmetic operations (+, -, *) cannot be performed directly on objects. If you do math with wrapper classes, Java must unbox the object, perform the CPU instruction on the primitive, and then autobox the result back into a brand new object.

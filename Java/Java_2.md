@@ -18,3 +18,8 @@
 * CPU Cycles: Arithmetic operations (+, -, *) cannot be performed directly on objects. If you do math with wrapper classes, Java must unbox the object, perform the CPU instruction on the primitive, and then autobox the result back into a brand new object.
 * CPU Cycles: Arithmetic is performed on primitives, not wrapper objects. When wrapper classes are used in expressions, Java automatically unboxes them, performs the operation on primitive values, and typically boxes the result again. This can introduce conversion and allocation overhead, especially in tight loops.
 * @Autowired annotation directly on a field (e.g., @Autowired private UserRepository repo;). While this still works, Constructor Injection (as shown above) is the modern best practice
+*Stack Memory: Fast, temporary storage. Every time a method is called, a new stack frame is created containing:
+
+Primitive local variables (int, boolean, double, etc.)
+
+References (memory addresses) pointing to objects stored on the Heap

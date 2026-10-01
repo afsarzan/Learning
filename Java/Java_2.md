@@ -19,7 +19,23 @@
 * CPU Cycles: Arithmetic is performed on primitives, not wrapper objects. When wrapper classes are used in expressions, Java automatically unboxes them, performs the operation on primitive values, and typically boxes the result again. This can introduce conversion and allocation overhead, especially in tight loops.
 * @Autowired annotation directly on a field (e.g., @Autowired private UserRepository repo;). While this still works, Constructor Injection (as shown above) is the modern best practice
 *Stack Memory: Fast, temporary storage. Every time a method is called, a new stack frame is created containing:
-
 Primitive local variables (int, boolean, double, etc.)
-
 References (memory addresses) pointing to objects stored on the Heap
+
+
+* Derived Query Methods (or query derivation) in Spring Data JPA allow you to generate database queries simply by declaring method names in your repository interface, without writing a single line of SQL or JPQL.
+
+* The "Method Name Runaway" Anti-Pattern: A method named findTop10ByDepartmentAndStatusInAndAgeGreaterThanEqualAndDeletedFalseOrderByCreatedAtDesc(...) is practically unreadable, brittle to refactors, and breaks clean-code principles. Keep derived queries to 2–3 parameters max; beyond that, use @Query or Querydsl.
+
+* Combine with Projections for Lean Queries: You don't have to return full entities. Define a closed projection interface to fetch only the columns you need, cutting down memory and network overhead:
+
+```Java
+public interface UserSummary {
+    String getEmail();
+    String getDepartment();
+}
+
+// Spring selects only 'email' and 'department' columns
+List<UserSummary> findByDepartment(String department);
+```
+* 

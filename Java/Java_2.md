@@ -38,4 +38,10 @@ public interface UserSummary {
 // Spring selects only 'email' and 'department' columns
 List<UserSummary> findByDepartment(String department);
 ```
-* 
+* These three building blocks define how data and behavior are structured as they flow through your application:
+
+DTO (Data Transfer Object): A dumb container used strictly to move data across boundaries (network, layers) without any business logic.
+
+Domain Entity: A business object with a distinct identity that persists over time, even as its internal attributes change.
+
+Value Object (VO): A lightweight, immutable object defined purely by its attributes rather than an identity.

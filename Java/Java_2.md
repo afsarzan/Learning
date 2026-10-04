@@ -44,4 +44,19 @@ DTO (Data Transfer Object): A dumb container used strictly to move data across b
 
 Domain Entity: A business object with a distinct identity that persists over time, even as its internal attributes change.
 
+* Refactor regularly
+Regular refactoring improves your code. For example, you can replace loops with Java 8's Stream API for more readable code:
+
+```java
+// Before refactoring
+for (String word : words) {
+    System.out.println(word);
+}
+
+
+
+// After refactoring
+Arrays.stream(words).forEach(System.out::println);
+```
+
 Value Object (VO): A lightweight, immutable object defined purely by its attributes rather than an identity.

@@ -60,3 +60,6 @@ Arrays.stream(words).forEach(System.out::println);
 ```
 
 Value Object (VO): A lightweight, immutable object defined purely by its attributes rather than an identity.
+
+
+* Combine Records with Projections in Spring Data: Since Spring Data 2.6+, interface-less projections via Java records are first-class citizens. You can declare List<UserSummaryDto> findByDepartment(String dept) without an explicit @Query string, provided the record component names align with entity properties.

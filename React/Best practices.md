@@ -58,3 +58,6 @@
         onclick = { () => dispatch(reducer1())}
 
     ```
+ ## file organization
+ * function based organization for smaller or medium size projects.
+ * Feature based organization for larger projects

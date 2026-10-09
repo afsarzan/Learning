@@ -63,3 +63,4 @@ Value Object (VO): A lightweight, immutable object defined purely by its attribu
 
 
 * Combine Records with Projections in Spring Data: Since Spring Data 2.6+, interface-less projections via Java records are first-class citizens. You can declare List<UserSummaryDto> findByDepartment(String dept) without an explicit @Query string, provided the record component names align with entity properties.
+* Avoid the N+1 Query Problem: When loading entities and their relationships, use a carefully scoped `JOIN FETCH`, `@EntityGraph`, or batch fetching instead of triggering one additional query per related entity. Verify the generated SQL before choosing an approach, because eager-loading multiple collections can create duplicate rows and excessive data.

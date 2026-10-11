@@ -124,3 +124,48 @@ public class TradeService {
 
 --   
 source: https://www.youtube.com/watch?v=EMdxiVYyMtU
+
+
+## Dig
+
+### Guard Patterns
+
+* Nested "Arrow" Pattern
+```
+function processPayment(user: User, order: Order): PaymentResult {
+  if (user != null) {
+    if (user.isActive) {
+      if (order.items.length > 0) {
+        if (user.balance >= order.total) {
+          // Actual happy path buried under 4 indentation levels
+          user.balance -= order.total;
+          return { status: "SUCCESS", transactionId: "tx_123" };
+        } else {
+          throw new Error("Insufficient funds");
+        }
+      } else {
+        throw new Error("Order cannot be empty");
+      }
+    } else {
+      throw new Error("User account is inactive");
+    }
+  } else {
+    throw new Error("User must exist");
+  }
+}
+```
+ The Solution: Guard Clauses
+ 
+ ```
+function processPayment(user: User, order: Order): PaymentResult {
+  // 1. Guard Clauses (Fail fast, return early)
+  if (!user) throw new Error("User must exist");
+  if (!user.isActive) throw new Error("User account is inactive");
+  if (order.items.length === 0) throw new Error("Order cannot be empty");
+  if (user.balance < order.total) throw new Error("Insufficient funds");
+
+  // 2. Happy Path (Clean, unindented, easy to read)
+  user.balance -= order.total;
+  return { status: "SUCCESS", transactionId: "tx_123" };
+}
+```

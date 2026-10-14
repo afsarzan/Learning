@@ -68,3 +68,7 @@
 
 ## Recoil -> similar to redux
 * Atom, useRecoilValue, useRecoilState( can create state and method ) , less verbose
+
+## Mobx -> similar to redux
+* makeAutoObservable, observer from mobx-react-lite, simpler things using OOPS concepts
+

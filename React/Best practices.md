@@ -65,3 +65,6 @@
 ## react-scripts eject
  * react-scripts eject is an irreversible command provided by Create React App (CRA) that takes all the underlying build tooling hidden behind the scenes—Webpack configs, Babel presets, PostCSS rules, ESLint scripts, and testing rigs—and dumps them directly into your project's root directory.
 * Virtually never in modern development. With Vite, Next.js, and modern bundlers (like Rspack or Turbopack) dominating the ecosystem, CRA itself is deprecated by the official React team.
+
+## Recoil -> similar to redux
+* Atom, useRecoilValue, useRecoilState( can create state and method ) , less verbose
